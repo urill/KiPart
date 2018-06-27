@@ -675,8 +675,8 @@ def draw_symbol(part_num, part_ref_prefix, part_footprint, part_manf_num, pin_da
 
 
 def is_pwr(pin, fuzzy_match):
-    '''Return true if this is a power input pin.'''
-    return find_closest_match(name=pin.type, name_dict=PIN_TYPES, fuzzy_match=fuzzy_match) == 'W'
+    '''Return true if this is a power input or output pin.'''
+    return find_closest_match(name=pin.type, name_dict=PIN_TYPES, fuzzy_match=fuzzy_match) in ('W', 'w')
 
 
 def is_nc(pin, fuzzy_match):
